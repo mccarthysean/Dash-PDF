@@ -1,13 +1,17 @@
 // For format details, see https://aka.ms/vscode-remote/devcontainer.json or the definition README at
 // https://github.com/microsoft/vscode-dev-containers/tree/master/containers/python-3-miniconda
 {
-  "name": "signature_dev",
-  "dockerComposeFile": "docker-compose.dev.yml",
-  "service": "signature_dev",
+  "name": "pdf_dev",
+  "dockerComposeFile": "../docker-compose.dev.yml",
+  "service": "pdf_dev",
   // The optional 'workspaceFolder' property is the path VS Code should open by default when
   // connected. This is typically a file mount in .devcontainer/docker-compose.yml
   // This way if you click "Reopen in container", it knows which workspace to use.
   "workspaceFolder": "/workspace",
+  "initializeCommand": "mkdir -p ${localEnv:HOME}/.claude-docker 2>/dev/null || true",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.claude-docker,target=/root/.claude,type=bind"
+  ],
   "customizations": {
     "vscode": {
       "settings": {
