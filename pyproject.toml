@@ -1,12 +1,12 @@
 [tool.poetry]
 name = "Dash-Signature"
-version = "0.1.5"
+version = "0.0.1"
 description = "Signature element for Dash sites in Python"
 authors = ["Coulton Fraser <cjrfraser@gmail.com>"]
 license = "MIT"
 readme = "README.md"
 packages = [
-    { include = "dash_signature", from = "." },
+    { include = "dash_pdf", from = "." },
 ]
 
 [tool.poetry.dependencies]
@@ -19,7 +19,7 @@ ruff = "^0.6.1"
 pyyaml = "^6.0.2"
 
 [tool.poetry.scripts]
-dash-signature = "dash_signature:main"
+dash-signature = "dash_pdf:main"
 
 [build-system]
 requires = ["poetry-core"]

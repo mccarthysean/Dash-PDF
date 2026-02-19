@@ -13,13 +13,13 @@ echo "Current working directory: $(pwd)"
 echo ""
 echo "Running ruff linter..."
 # Run the linter
-ruff check ../dash_signature --config ../pyproject.toml
+ruff check ../dash_pdf --config ../pyproject.toml
 ruff check ../tests --config ../pyproject.toml
 
 # Run the formatter
 echo ""
 echo "Running ruff formatter..."
-ruff format ../dash_signature --config ../pyproject.toml
+ruff format ../dash_pdf --config ../pyproject.toml
 ruff format ../tests --config ../pyproject.toml
 
 echo ""

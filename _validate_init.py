@@ -9,7 +9,7 @@ import importlib
 import os
 import sys
 
-components_package = "dash_signature"
+components_package = "dash_pdf"
 
 components_lib = importlib.import_module(components_package)
 

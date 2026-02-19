@@ -110,7 +110,7 @@ module.exports = (env, argv) => {
                         chunks: 'all',
                         minSize: 0,
                         minChunks: 2,
-                        name: 'dash_signature-shared',
+                        name: 'dash_pdf-shared',
                     },
                 },
             },

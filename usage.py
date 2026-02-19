@@ -1,6 +1,5 @@
 from dash import Dash, Input, Output, html
-
-from dash_signature import Signature  # , Test
+from dash_pdf import Signature  # , Test
 
 app = Dash(__name__)
 value_store = ""

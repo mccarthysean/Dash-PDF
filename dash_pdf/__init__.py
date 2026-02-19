@@ -7,8 +7,8 @@ import sys as _sys
 import dash as _dash
 
 # noinspection PyUnresolvedReferences
-from dash_signature._imports_ import *  # noqa: F403
-from dash_signature._imports_ import __all__
+from dash_pdf._imports_ import *  # noqa: F403
+from dash_pdf._imports_ import __all__
 
 if not hasattr(_dash, "__plotly_dash") and not hasattr(_dash, "development"):
     print(
@@ -67,11 +67,11 @@ _js_dist.extend(
 _js_dist.extend(
     [
         {
-            "relative_package_path": "dash_signature.min.js",
+            "relative_package_path": "dash_pdf.min.js",
             "namespace": package_name,
         },
         {
-            "relative_package_path": "dash_signature.min.js.map",
+            "relative_package_path": "dash_pdf.min.js.map",
             "namespace": package_name,
             "dynamic": True,
         },

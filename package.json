@@ -1,32 +1,26 @@
 {
-  "name": "dash_signature",
-  "version": "0.1.5",
-  "description": "None",
+  "name": "dash_pdf",
+  "version": "0.0.1",
+  "description": "Dash button for printing to PDF",
   "main": "build/index.js",
   "scripts": {
     "css": "NODE_ENV=production npx tailwindcss -i ./src/lib/css/input.css -o ./src/lib/css/output.css",
     "start": "webpack serve --config ./webpack.serve.config.js --open",
-    "clean": "find ./dash_signature -type f ! -name '__init__.py' -delete",
+    "clean": "find ./dash_pdf -type f ! -name '__init__.py' -delete",
     "validate-init": "python _validate_init.py",
-    "prepublishOnly": "npm run validate-init",
+    "prepublishOnly": "yarn run validate-init",
     "build:js": "webpack --mode production",
-    "build:backends": "dash-generate-components ./src/lib/components dash_signature -p package-info.json --ignore \\.test\\.",
-    "build:backends-activated": "(. venv/bin/activate || venv\\scripts\\activate && npm run build:backends)",
-    "build": "npm run clean && npm run css && npm run build:js && npm run build:backends",
-    "bundle": "NODE_ENV=production npm run build && python setup.py sdist bdist_wheel",
-    "build:activated": "npm run build:js && npm run build:backends-activated",
-    "rebuild": "npm run build && poetry install && python usage.py"
+    "build:backends": "dash-generate-components ./src/lib/components dash_pdf -p package-info.json --ignore \\.test\\.",
+    "build:backends-activated": "(. venv/bin/activate || venv\\scripts\\activate && yarn run build:backends)",
+    "build": "yarn run clean && yarn run css && yarn run build:js && yarn run build:backends",
+    "bundle": "NODE_ENV=production yarn run build && python setup.py sdist bdist_wheel",
+    "build:activated": "yarn run build:js && yarn run build:backends-activated",
+    "rebuild": "yarn run build && poetry install && python usage.py"
   },
-  "author": "Coulton <cjrfraser@gmail.com>",
-  "license": "",
+  "author": "Sean McCarthy <sean.mccarthy@live.ca>",
+  "license": "MIT",
   "dependencies": {
-    "@floating-ui/react": "^0.26.19",
-    "@headlessui/react": "^2.1.2",
-    "@radix-ui/react-dialog": "^1.1.1",
-    "@radix-ui/react-visually-hidden": "^1.1.0",
-    "ramda": "^0.26.1",
-    "signature_pad": "^5.0.1",
-    "tailwindcss": "^3.4.14"
+    "ramda": "^0.26.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.9",
@@ -57,6 +51,7 @@
     "rimraf": "^5.0.5",
     "style-loader": "^3.3.4",
     "styled-jsx": "^5.1.2",
+    "tailwindcss": "^3.4.14",
     "webpack": "^5.90.1",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.0"
@@ -64,5 +59,6 @@
   "engines": {
     "node": ">=8.11.0",
     "npm": ">=6.1.0"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
 }
